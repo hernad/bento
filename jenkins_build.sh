@@ -7,7 +7,7 @@ if [ ! -f packer.zip ] ; then
 fi
 
 chmod +x packer
-./packer build -var 'headless=true'  -only=virtualbox-iso ubuntu-16.04-i386.json
+./packer build -var 'headless=true'  -only=virtualbox-iso ubuntu-16.04-amd64.json
 
-mv output/packer_ubuntu_virtualbox.box ubuntu_16.04_$(date +"%Y-%d-%m")_i386.box
+mv output/packer_ubuntu_virtualbox.box ubuntu_16.04_$(date +"%Y-%d-%m")_amd64.box
 
