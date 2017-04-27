@@ -6,6 +6,7 @@ if [ ! -f packer.zip ] ; then
   unzip packer.zip
 fi
 
+rm -rf packer-ubuntu-16.04-amd64-virtualbox
 # ako je na silu prosli put prekinuto
 VBoxManage controlvm ubuntu-16.04-amd64 poweroff
 VBoxManage unregistervm ubuntu-16.04-amd64 --delete
