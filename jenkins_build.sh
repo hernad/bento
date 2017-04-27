@@ -9,5 +9,5 @@ fi
 chmod +x packer
 ./packer build -var 'headless=true'  -only=virtualbox-iso ubuntu-16.04-amd64.json
 
-mv output/packer_ubuntu_virtualbox.box ubuntu_16.04_$(date +"%Y-%d-%m")_amd64.box
+mv builds/ubuntu-16.04-amd64.virtualbox.box ubuntu_16.04-amd64_$(date +"%Y-%d-%m").box
 
