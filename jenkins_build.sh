@@ -12,6 +12,8 @@ VBoxManage controlvm ubuntu-16.04-amd64 poweroff
 VBoxManage unregistervm ubuntu-16.04-amd64 --delete
 VBoxManage unregistervm ubuntu-16.04-amd64 --delete
 
+rm -rf "/home/docker/VirtualBox VMs/ubuntu-16.04-amd64"
+
 
 chmod +x packer
 ./packer build -var 'headless=true'  -only=virtualbox-iso ubuntu-16.04-amd64.json
