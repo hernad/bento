@@ -14,5 +14,8 @@ virtualbox-iso|virtualbox-ovf)
     umount /tmp/vbox;
     rm -rf /tmp/vbox;
     rm -f $HOME_DIR/*.iso;
+    scripts/common/virtualbox.sh
+    [ -e /sbin/mount.vboxsf ] || rm -f /sbin/mount.vboxsf
+    cp -av /opt/VBoxGuestAdditions-${VER}/lib/VBoxGuestAdditions/mount.vboxsf  /sbin/mount.vboxsf
     ;;
 esac
