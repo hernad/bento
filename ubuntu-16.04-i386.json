@@ -24,7 +24,7 @@
         " noapic<wait>",
         " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{user `preseed_path`}}<wait>",
         " -- <wait>",
-        "<enter><wait><enter><enter><wait>"
+        "<enter><wait><wait><wait><wait><enter><wait><enter>"
       ],
       "boot_wait": "10s",
       "disk_size": "{{user `disk_size`}}",
