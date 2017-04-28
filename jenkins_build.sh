@@ -1,12 +1,15 @@
 #!/bin/bash
 
+if [ -z "$1" ] ; then
+   ARCH=i386
+else
+   ARCH=amd64
+fi
 
 if [ ! -f packer.zip ] ; then
   curl -L https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip?_ga=1.155119281.822261056.1493217676 > packer.zip
   unzip packer.zip
 fi
-
-ARCH=i386
 
 rm -rf packer-ubuntu-16.04-${ARCH}-virtualbox
 # ako je na silu prosli put prekinuto
