@@ -23,5 +23,8 @@ rm -rf "/home/docker/VirtualBox VMs/ubuntu-16.04-${ARCH}"
 chmod +x packer
 ./packer build -var 'headless=true'  -only=virtualbox-iso ubuntu-16.04-${ARCH}.json
 
-mv builds/ubuntu-16.04-i386.virtualbox.box ubuntu_16.04-${ARCH}_$(date +"%Y-%m-%d").box
-
+if [ $ARCH == "amd64" ] ; then
+   mv builds/ubuntu-16.04.virtualbox.box ubuntu_16.04_$(date +"%Y-%m-%d").box
+else
+   mv builds/ubuntu-16.04-${ARCH}.virtualbox.box ubuntu_16.04-${ARCH}_$(date +"%Y-%m-%d").box
+fi
