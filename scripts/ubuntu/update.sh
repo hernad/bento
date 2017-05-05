@@ -1,4 +1,4 @@
-#!/bin/sh -eux
+#!/bin/sh
 
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
 ubuntu_major_version="`echo $ubuntu_version | awk -F. '{print $1}'`";
@@ -33,9 +33,9 @@ cat <<EOF >/etc/apt/apt.conf.d/10disable-periodic;
 APT::Periodic::Enable "0";
 EOF
 
-apt-get -y install parted htop tmux lubuntu-desktop git
+apt-get -y install parted htop lubuntu-desktop git
 
 # Upgrade all installed packages incl. kernel and kernel headers
-apt-get -y dist-upgrade;
+# apt-get -y dist-upgrade;
 reboot;
 sleep 60;
