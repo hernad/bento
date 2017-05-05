@@ -14,7 +14,7 @@ sed -i.bak 's/^Prompt=.*$/Prompt=never/' /etc/update-manager/release-upgrades;
 
 # Update the package list
 apt-get -y update;
-
+apt-get - upgrade;
 # update package index on boot
 cat <<EOF >/etc/init/refresh-apt.conf;
 description "update package index"
@@ -36,6 +36,6 @@ EOF
 apt-get -y install parted htop lubuntu-desktop git
 
 # Upgrade all installed packages incl. kernel and kernel headers
-# apt-get -y dist-upgrade;
+apt-get -y dist-upgrade;
 reboot;
 sleep 60;
