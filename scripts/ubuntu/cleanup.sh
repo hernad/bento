@@ -1,4 +1,4 @@
-#!/bin/sh -eux
+#!/bin/sh
 
 # Delete all Linux headers
 dpkg --list \
@@ -55,3 +55,5 @@ find /var/cache -type f -exec rm -rf {} \;
 
 # delete any logs that have built up during the install
 find /var/log/ -name *.log -exec rm -f {} \;
+
+echo == kako god zavrsi sa success ==
