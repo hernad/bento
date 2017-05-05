@@ -26,7 +26,7 @@ chmod +x packer
 ./packer build -var 'headless=true'  -only=virtualbox-iso ubuntu-${UBUNTU_VER}-${ARCH}.json
 
 if [ $ARCH == "amd64" ] ; then
-   mv builds/ubuntu-${UBUNTU_VER}.virtualbox.box ubuntu_${UBUNTU_VER}_$(date +"%Y-%m-%d").box
+   mv builds/ubuntu-${UBUNTU_VER}.virtualbox.box ubuntu_desktop_${UBUNTU_VER}_$(date +"%Y-%m-%d").box
 else
-   mv builds/ubuntu-${UBUNTU_VER}-${ARCH}.virtualbox.box ubuntu_${UBUNTU_VER}-${ARCH}_$(date +"%Y-%m-%d").box
+   mv builds/ubuntu-${UBUNTU_VER}-${ARCH}.virtualbox.box ubuntu_desktop_${UBUNTU_VER}-${ARCH}_$(date +"%Y-%m-%d").box
 fi
