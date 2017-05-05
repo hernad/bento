@@ -33,7 +33,7 @@ cat <<EOF >/etc/apt/apt.conf.d/10disable-periodic;
 APT::Periodic::Enable "0";
 EOF
 
-apt-get -y install parted htop tmux
+apt-get -y install parted htop tmux lubuntu-desktop git
 
 # Upgrade all installed packages incl. kernel and kernel headers
 apt-get -y dist-upgrade;
