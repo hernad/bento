@@ -34,7 +34,8 @@ dpkg --list \
     | xargs apt-get -y purge;
 
 # Delete X11 libraries
-apt-get -y purge libx11-data xauth libxmuu1 libxcb1 libx11-6 libxext6;
+# NO NO NO in desktop version
+# apt-get -y purge libx11-data xauth libxmuu1 libxcb1 libx11-6 libxext6;
 
 # Delete obsolete networking
 apt-get -y purge ppp pppconfig pppoeconf;
