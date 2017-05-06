@@ -49,7 +49,7 @@ apt-get -y install parted aptitude htop lubuntu-desktop git --no-install-recomme
 
 apt-get -y purge aspell dictionaries-common;
 apt-get -y install -f;
-apt-get -y install virtualbox-guest-x11 chromium-browser;
+apt-get -y install virtualbox-guest-x11 virtualbox-guest-utils chromium-browser;
 
 echo === ignore dpkg errors ====
 
