@@ -33,12 +33,16 @@ cat <<EOF >/etc/apt/apt.conf.d/10disable-periodic;
 APT::Periodic::Enable "0";
 EOF
 
-apt-get -y update
-apt-get -y upgrade
-apt-get -y install -f
-apt-get -y install parted htop lubuntu-desktop git
+apt-get -y update;
+apt-get -y upgrade;
+apt-get -y install -f;
+apt-get -y install parted htop lubuntu-desktop git;
 
 # Upgrade all installed packages incl. kernel and kernel headers
-apt-get -y dist-upgrade;
+apt-get -y upgrade;
+apt-get -y install -f;
+
+echo === ignore dpkg errors ====
+
 reboot;
 sleep 60;
