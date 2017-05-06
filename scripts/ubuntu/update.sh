@@ -20,7 +20,7 @@ cat <<EOF >/etc/init/refresh-apt.conf;
 description "update package index"
 start on networking
 task
-exec /usr/bin/apt-get update
+exec /usr/bin/apt-get -y update
 EOF
 
 # Manage broken indexes on distro disc 12.04.5
@@ -33,6 +33,9 @@ cat <<EOF >/etc/apt/apt.conf.d/10disable-periodic;
 APT::Periodic::Enable "0";
 EOF
 
+apt-get -y update
+apt-get -y upgrade
+apt-get -y install -f
 apt-get -y install parted htop lubuntu-desktop git
 
 # Upgrade all installed packages incl. kernel and kernel headers
