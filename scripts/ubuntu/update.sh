@@ -33,6 +33,15 @@ cat <<EOF >/etc/apt/apt.conf.d/10disable-periodic;
 APT::Periodic::Enable "0";
 EOF
 
+cat > /etc/lightdm.conf <<EOF
+[SeatDefaults]
+autologin-user=vagrant
+autologin-user-timeout=0
+# Check https://bugs.launchpad.net/lightdm/+bug/854261 before setting a timeout
+user-session=Lubuntu
+greeter-session=lightdm-gtk-greeter
+EOF
+
 apt-get -y update;
 apt-get -y upgrade;
 apt-get -y install -f;
@@ -40,6 +49,7 @@ apt-get -y install parted aptitude htop lubuntu-desktop git --no-install-recomme
 
 apt-get -y purge aspell dictionaries-common;
 apt-get -y install -f;
+apt-get -y install virtualbox-guest-x11 chromium-browser;
 
 echo === ignore dpkg errors ====
 
