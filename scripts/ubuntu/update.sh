@@ -38,6 +38,15 @@ apt-get -y upgrade
 apt-get -y install -f
 apt-get -y install parted htop lubuntu-desktop git
 
+cat > /etc/lightdm.conf <<EOF
+[SeatDefaults]
+autologin-user=vagrant
+autologin-user-timeout=0
+# Check https://bugs.launchpad.net/lightdm/+bug/854261 before setting a timeout
+user-session=Lubuntu
+greeter-session=lightdm-gtk-greeter
+EOF
+
 # Upgrade all installed packages incl. kernel and kernel headers
 apt-get -y dist-upgrade;
 reboot;
