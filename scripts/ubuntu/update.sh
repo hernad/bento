@@ -38,8 +38,7 @@ apt-get -y upgrade;
 apt-get -y install -f;
 apt-get -y install parted htop lubuntu-desktop git;
 
-# Upgrade all installed packages incl. kernel and kernel headers
-apt-get -y upgrade;
+apt-get -y purge aspell dictionaries-common;
 apt-get -y install -f;
 
 echo === ignore dpkg errors ====
