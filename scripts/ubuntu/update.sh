@@ -36,7 +36,7 @@ EOF
 apt-get -y update;
 apt-get -y upgrade;
 apt-get -y install -f;
-apt-get -y install parted htop lubuntu-desktop git;
+apt-get -y install parted aptitude htop lubuntu-desktop git --no-install-recommends;
 
 apt-get -y purge aspell dictionaries-common;
 apt-get -y install -f;
