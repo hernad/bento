@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UBUNTU_VER=16.04
+UBUNTU_VER=12.04
 
 if [ -z "$1" ] ; then
    ARCH=i386
