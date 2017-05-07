@@ -42,6 +42,15 @@ user-session=Lubuntu
 greeter-session=lightdm-gtk-greeter
 EOF
 
+
+cat > /etc/rc.local <<EOF
+#!/bin/sh
+modprobe vboxsf
+exit 0
+EOF
+
+chmod +x /etc/rc.local
+
 apt-get -y update;
 apt-get -y upgrade;
 apt-get -y install -f;
