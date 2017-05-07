@@ -33,6 +33,15 @@ cat <<EOF >/etc/apt/apt.conf.d/10disable-periodic;
 APT::Periodic::Enable "0";
 EOF
 
+apt-get -y update;
+apt-get -y upgrade;
+apt-get -y install -f;
+apt-get -y install parted aptitude htop lubuntu-desktop git --no-install-recommends;
+
+apt-get -y purge aspell dictionaries-common;
+apt-get -y install -f;
+apt-get -y install virtualbox-guest-x11 virtualbox-guest-utils chromium-browser;
+
 cat > /etc/lightdm/lightdm.conf <<EOF
 [SeatDefaults]
 autologin-user=vagrant
@@ -42,7 +51,6 @@ user-session=Lubuntu
 greeter-session=lightdm-gtk-greeter
 EOF
 
-
 cat > /etc/rc.local <<EOF
 #!/bin/sh
 modprobe vboxsf
@@ -50,15 +58,6 @@ exit 0
 EOF
 
 chmod +x /etc/rc.local
-
-apt-get -y update;
-apt-get -y upgrade;
-apt-get -y install -f;
-apt-get -y install parted aptitude htop lubuntu-desktop git --no-install-recommends;
-
-apt-get -y purge aspell dictionaries-common;
-apt-get -y install -f;
-apt-get -y install virtualbox-guest-x11 virtualbox-guest-utils chromium-browser;
 
 echo === ignore dpkg errors ====
 
