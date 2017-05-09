@@ -2,11 +2,15 @@
 
 UBUNTU_VER=16.04
 
-if [ -z "$1" ] ; then
-   ARCH=amd64
-else
-   ARCH=i386
-fi
+case "$1" in
+
+   i386)
+      ARCH=i386
+      ;;
+   amd64|*)
+      ARCH=amd64
+      ;;
+esac
 
 if [ ! -f packer.zip ] ; then
   curl -L https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip?_ga=1.155119281.822261056.1493217676 > packer.zip
