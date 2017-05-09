@@ -3,9 +3,9 @@
 UBUNTU_VER=16.04
 
 if [ -z "$1" ] ; then
-   ARCH=i386
-else
    ARCH=amd64
+else
+   ARCH=i386
 fi
 
 if [ ! -f packer.zip ] ; then
